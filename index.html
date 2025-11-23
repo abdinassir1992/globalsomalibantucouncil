@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Global Somali Bantu Council (GSBC) – the official umbrella body for Somali Bantu communities worldwide. Unity • Justice • Dignity." />
 
-  <!-- Google Font (optional) -->
+  <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -25,13 +25,9 @@
       --shadow-soft: 0 14px 30px rgba(15, 23, 42, 0.08);
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
@@ -41,18 +37,9 @@
       line-height: 1.6;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; height: auto; display: block; }
 
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    /* Layout helpers */
     .page {
       min-height: 100vh;
       display: flex;
@@ -150,9 +137,7 @@
       border: 1px solid var(--primary-dark);
     }
 
-    .nav-cta:hover {
-      background: var(--primary-dark);
-    }
+    .nav-cta:hover { background: var(--primary-dark); }
 
     .nav-toggle {
       display: none;
@@ -180,10 +165,10 @@
       padding: 0.15rem 0.6rem;
       border-radius: 999px;
       border: 1px solid rgba(148, 163, 184, 0.5);
-      background: rgba(255, 255, 255, 0.6);
+      background: rgba(255, 255, 255, 0.8);
       font-size: 0.78rem;
       color: var(--text-muted);
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.7rem;
     }
 
     .hero-eyebrow span {
@@ -194,15 +179,25 @@
     .flags {
       display: inline-flex;
       align-items: center;
-      gap: 0.3rem;
     }
 
     .flags img {
-      width: 16px;
-      height: 11px;
-      border-radius: 2px;
-      object-fit: cover;
-      border: 1px solid rgba(15,23,42,0.1);
+      height: 16px;
+      width: auto;
+      border-radius: 3px;
+      border: 1px solid rgba(15, 23, 42, 0.1);
+      margin-left: 0.3rem;
+    }
+
+    .hero-logo-banner {
+      max-width: 360px;
+      margin-bottom: 1rem;
+    }
+
+    .hero-logo-banner img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.12);
     }
 
     .hero-title {
@@ -240,7 +235,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.1rem;
     }
 
     .btn {
@@ -289,9 +284,7 @@
       color: var(--text-muted);
     }
 
-    .stat {
-      min-width: 110px;
-    }
+    .stat { min-width: 110px; }
 
     .stat-number {
       font-size: 1.2rem;
@@ -409,17 +402,10 @@
     }
 
     /* Sections */
-    section {
-      padding: 2.5rem 0;
-    }
+    section { padding: 2.5rem 0; }
 
-    section:nth-of-type(odd) {
-      background: #ffffff;
-    }
-
-    section:nth-of-type(even) {
-      background: var(--light-bg);
-    }
+    section:nth-of-type(odd) { background: #ffffff; }
+    section:nth-of-type(even) { background: var(--light-bg); }
 
     .section-header {
       max-width: 720px;
@@ -447,7 +433,6 @@
       margin: 0;
     }
 
-    /* About / Story */
     .two-column {
       display: grid;
       grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
@@ -482,11 +467,8 @@
       color: var(--text-muted);
     }
 
-    .bullet-list li {
-      margin-bottom: 0.25rem;
-    }
+    .bullet-list li { margin-bottom: 0.25rem; }
 
-    /* Mission / Values */
     .pill-row {
       display: flex;
       flex-wrap: wrap;
@@ -552,7 +534,7 @@
       color: var(--text-muted);
     }
 
-    /* Leadership list */
+    /* Leadership grid */
     .leadership-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
@@ -604,7 +586,7 @@
       color: var(--text-muted);
     }
 
-    /* Get Involved */
+    /* Get involved */
     .involved-layout {
       display: grid;
       grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
@@ -640,7 +622,7 @@
       margin-top: 0.1rem;
     }
 
-    /* Contact & Form */
+    /* Contact */
     .contact-layout {
       display: grid;
       grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
@@ -675,9 +657,7 @@
       min-height: 40px;
     }
 
-    textarea {
-      min-height: 110px;
-    }
+    textarea { min-height: 110px; }
 
     input:focus,
     textarea:focus {
@@ -708,7 +688,6 @@
       min-width: 3.7rem;
     }
 
-    /* Footer */
     footer {
       border-top: 1px solid rgba(226, 232, 240, 0.9);
       padding: 1rem 0 1.3rem 0;
@@ -730,7 +709,6 @@
       color: var(--primary-dark);
     }
 
-    /* Responsive */
     @media (max-width: 880px) {
       .hero-inner,
       .two-column,
@@ -739,13 +717,8 @@
         grid-template-columns: minmax(0, 1fr);
       }
 
-      .hero-inner {
-        gap: 1.8rem;
-      }
-
-      .hero-card {
-        order: -1;
-      }
+      .hero-inner { gap: 1.8rem; }
+      .hero-card { order: -1; }
 
       .nav-links {
         display: none;
@@ -759,19 +732,12 @@
         flex-wrap: wrap;
       }
 
-      .nav-links.show {
-        display: flex;
-      }
-
-      .nav-toggle {
-        display: block;
-      }
+      .nav-links.show { display: flex; }
+      .nav-toggle { display: block; }
     }
 
     @media (max-width: 600px) {
-      .hero {
-        padding-top: 1.7rem;
-      }
+      .hero { padding-top: 1.7rem; }
     }
   </style>
 </head>
@@ -813,15 +779,16 @@
         <!-- Left -->
         <div>
           <div class="hero-eyebrow">
-            <span>Unity • Justice • Dignity</span> ·
+            <span>Unity • Justice • Dignity</span>
             <span class="flags">
-              <!-- Replace src with your actual flag image filenames if you add them -->
-              <!-- Example: usa-flag.png and somalia-flag.png in the root of the repo -->
-              <!-- <img src="usa-flag.png" alt="USA flag"> -->
-              <!-- <img src="somalia-flag.png" alt="Somalia flag"> -->
-              <span>🇺🇸</span><span>🇸🇴</span>
+              <img src="gsbc-flags.webp" alt="Flags of the United States and Somalia">
             </span>
           </div>
+
+          <div class="hero-logo-banner">
+            <img src="gsbc-header.jpg" alt="Global Somali Bantu Council logo with flags">
+          </div>
+
           <h1 class="hero-title">Global Somali Bantu Council (GSBC)</h1>
           <p class="hero-subtitle">
             The official umbrella body for Somali Bantu communities worldwide.
@@ -1239,10 +1206,8 @@
           The official organizational chart of the Global Somali Bantu Council is shown below. This visual structure can
           be updated as new departments and regional representatives are added.
         </p>
-        <p style="margin-top: 0.5rem; font-size: 0.88rem;">
-          <!-- If you have org-structure.jpg in your repo, this will display it -->
-          <!-- <img src="org-structure.jpg" alt="Global Somali Bantu Council organizational structure"> -->
-          <em>Global Somali Bantu Council organizational structure (upload <strong>org-structure.jpg</strong> to display the chart here).</em>
+        <p style="margin-top: 0.5rem;">
+          <img src="gsbc-org-structure.jpg" alt="Global Somali Bantu Council organizational structure chart">
         </p>
       </div>
     </div>
@@ -1431,5 +1396,3 @@
 
 </body>
 </html>
-
-
