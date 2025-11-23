@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Global Somali Bantu Council</title>
+  <title>Global Somali Bantu Council (GSBC)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Global Somali Bantu Council - Uniting Somali Bantu communities worldwide through advocacy, education, and empowerment." />
+  <meta name="description" content="Global Somali Bantu Council (GSBC) - Official website for the global umbrella body serving Somali Bantu communities worldwide." />
   <style>
     * {
       box-sizing: border-box;
@@ -53,7 +53,7 @@
     .logo {
       font-weight: 800;
       letter-spacing: 0.03em;
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       text-transform: uppercase;
     }
 
@@ -78,7 +78,7 @@
     .hero {
       background: linear-gradient(135deg, #022c22, #115e59);
       color: #f9fafb;
-      padding: 3.5rem 0 3rem;
+      padding: 3.2rem 0 3rem;
     }
 
     .hero-inner {
@@ -89,14 +89,14 @@
     }
 
     .hero h1 {
-      font-size: 2.3rem;
+      font-size: 2.2rem;
       line-height: 1.1;
       margin-bottom: 1rem;
     }
 
     .hero p {
       font-size: 1.02rem;
-      margin-bottom: 1.4rem;
+      margin-bottom: 1.1rem;
       max-width: 34rem;
     }
 
@@ -104,7 +104,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.1rem;
     }
 
     .badge {
@@ -119,6 +119,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem;
+      margin-top: 0.6rem;
     }
 
     .btn {
@@ -215,6 +216,13 @@
       margin-bottom: 1.7rem;
     }
 
+    .section-intro-sm {
+      max-width: 44rem;
+      font-size: 0.9rem;
+      color: #4b5563;
+      margin-bottom: 1rem;
+    }
+
     .grid-2 {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -286,32 +294,6 @@
       margin-bottom: 0.25rem;
     }
 
-    /* Leadership */
-    .cards-3 {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.2rem;
-    }
-
-    .leader-role {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: #6b7280;
-      margin-bottom: 0.15rem;
-    }
-
-    .leader-name {
-      font-weight: 700;
-      margin-bottom: 0.25rem;
-    }
-
-    .leader-meta {
-      font-size: 0.8rem;
-      color: #6b7280;
-      margin-bottom: 0.2rem;
-    }
-
     /* Programs */
     .program-badge {
       font-size: 0.76rem;
@@ -321,17 +303,61 @@
       margin-bottom: 0.2rem;
     }
 
-    /* News */
-    .news-item + .news-item {
-      margin-top: 0.9rem;
-      border-top: 1px solid #e5e7eb;
-      padding-top: 0.9rem;
+    /* Bilingual block */
+    .lang-block {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.5rem;
     }
 
-    .news-meta {
-      font-size: 0.78rem;
+    .lang-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
       color: #6b7280;
-      margin-bottom: 0.15rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .lang-text {
+      font-size: 0.9rem;
+      color: #374151;
+    }
+
+    /* Leadership */
+    .leader-list {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.8rem;
+      font-size: 0.9rem;
+    }
+
+    .leader-item {
+      padding: 0.4rem 0.2rem;
+    }
+
+    .leader-role {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #6b7280;
+    }
+
+    .leader-name {
+      font-weight: 600;
+      color: #111827;
+    }
+
+    .leader-loc {
+      font-size: 0.8rem;
+      color: #6b7280;
+    }
+
+    /* Regions */
+    .regions-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      font-size: 0.9rem;
     }
 
     /* Get involved */
@@ -438,10 +464,18 @@
     @media (max-width: 900px) {
       .hero-inner,
       .grid-2,
-      .cards-3,
+      .lang-block,
       .cta-panel,
       .contact-grid {
         grid-template-columns: minmax(0, 1fr);
+      }
+
+      .leader-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .regions-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
       .hero {
@@ -453,7 +487,14 @@
       }
 
       nav ul {
-        display: none; /* keep it simple on mobile */
+        display: none; /* simple mobile nav */
+      }
+    }
+
+    @media (max-width: 640px) {
+      .leader-list,
+      .regions-grid {
+        grid-template-columns: minmax(0, 1fr);
       }
     }
   </style>
@@ -472,7 +513,7 @@
             <li><a href="#mission">Mission</a></li>
             <li><a href="#programs">Programs</a></li>
             <li><a href="#leadership">Leadership</a></li>
-            <li><a href="#news">News</a></li>
+            <li><a href="#regions">Regions</a></li>
             <li><a href="#get-involved">Get Involved</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
@@ -487,25 +528,28 @@
       <div class="hero-inner">
         <div>
           <div class="hero-badges">
-            <span class="badge">Unity • Identity • Dignity</span>
-            <span class="badge">Serving Somali Bantu worldwide</span>
+            <span class="badge">Global Somali Bantu Council (GSBC)</span>
+            <span class="badge">Unity • Justice • Dignity</span>
           </div>
-          <h1>Building a stronger future for Somali Bantu communities across the globe.</h1>
+          <h1>Official umbrella body for Somali Bantu communities worldwide.</h1>
           <p>
-            The Global Somali Bantu Council (GSBC) connects community leaders, elders, youth, and partners to
-            advance education, economic opportunity, human rights, and cultural preservation for Somali Bantu
-            people everywhere.
+            GSBC connects Somali Bantu councils, elders, youth, and partners across continents to defend rights,
+            protect identity, and build a better future for our people in Somalia, in refugee camps, and in the diaspora.
+          </p>
+          <p style="font-size:0.9rem; opacity:0.9;">
+            <strong>Af Maay / Af Soomaali:</strong> Golaha Caalamiga ah ee reer Bantu Soomaalida waa hay’adda mideysa
+            hoggaanka, culimada, dhalinyarada iyo haweenka, si loo ilaaliyo karaamada iyo codka bulshada.
           </p>
           <div class="hero-actions">
-            <a href="#get-involved" class="btn btn-primary">Join the Council</a>
-            <a href="#programs" class="btn btn-outline">Explore our programs</a>
+            <a href="#get-involved" class="btn btn-primary">Join / Register a Council</a>
+            <a href="#leadership" class="btn btn-outline">View leadership structure</a>
           </div>
         </div>
         <aside class="hero-card">
           <h2>Our global mandate</h2>
           <p>
-            GSBC works as an umbrella body for Somali Bantu organizations, councils, and communities across
-            Africa, North America, Europe, and beyond.
+            GSBC serves as a neutral, community-driven platform for coordination, advocacy, and partnership on behalf of
+            Somali Bantu communities wherever they live.
           </p>
           <div class="hero-stat-row">
             <div class="hero-stat">
@@ -534,10 +578,9 @@
       <div class="section-kicker">About GSBC</div>
       <h2 class="section-title">Who we are</h2>
       <p class="section-intro">
-        The Global Somali Bantu Council is a non-partisan, community-driven body that brings together Somali
-        Bantu elders, youth leaders, scholars, and professionals. We work collaboratively with local community
-        organizations, international partners, and government institutions to ensure Somali Bantu voices are heard
-        and respected.
+        The Global Somali Bantu Council is a non-partisan, community-rooted umbrella council that brings together Somali
+        Bantu leaders from different cities, states, and countries. We work with local organizations, mosques, youth groups,
+        and elders’ committees to ensure Somali Bantu voices are respected and represented.
       </p>
 
       <div class="grid-2">
@@ -545,28 +588,25 @@
           <h3>Our story</h3>
           <p>
             Somali Bantu communities have a long history of resilience in the face of discrimination, conflict, and
-            displacement. From the river valleys of southern Somalia to refugee camps and resettlement cities around
-            the world, our people have kept their culture, language, and identity alive.
+            displacement. From the river valleys of southern Somalia to refugee camps in Kenya and resettlement cities
+            around the world, our people have protected their culture, language, and faith.
           </p>
-          <p style="margin-top: 0.5rem;">
-            GSBC emerged from grassroots collaboration between community leaders who recognized the need for a
-            unified global voice to advocate for rights, dignity, and inclusion.
+          <p style="margin-top:0.5rem;">
+            GSBC was created when community leaders and activists recognized the need for a united global platform to speak
+            with one voice, coordinate efforts, and support each other across borders.
           </p>
         </div>
         <div class="card">
-          <h3>What we do</h3>
+          <h3>Waxaan uga jeednaa</h3>
+          <p class="lang-text">
+            GSBC waa gole caalami ah oo mideeya hoggaanka reer Bantu Soomaalida. Ujeeddadeennu waa:
+          </p>
           <ul class="list">
-            <li>Coordinate and support Somali Bantu councils and organizations worldwide.</li>
-            <li>Advocate for fair representation, protection, and inclusive policies.</li>
-            <li>Promote education, skills development, and youth leadership.</li>
-            <li>Preserve and celebrate Somali Bantu culture, language, and heritage.</li>
-            <li>Facilitate partnerships with NGOs, governments, and international bodies.</li>
+            <li>In la mideeyo codka iyo hoggaanka bulshada.</li>
+            <li>In la difaaco xuquuqda, karaamada, iyo badqabka bulshada meel kasta oo ay joogaan.</li>
+            <li>In dhalinyarada iyo haweenka loo abuuro fursado hogaamineed iyo waxbarasho.</li>
+            <li>In la ilaaliyo luqadda, dhaqanka, iyo taariikhda reer Bantu.</li>
           </ul>
-          <div class="pill-row">
-            <span class="pill">Community organizing</span>
-            <span class="pill">Global advocacy</span>
-            <span class="pill">Youth empowerment</span>
-          </div>
         </div>
       </div>
     </div>
@@ -576,37 +616,37 @@
   <section id="mission">
     <div class="container">
       <div class="section-kicker">Our direction</div>
-      <h2 class="section-title">Mission, Vision & Core Values</h2>
+      <h2 class="section-title">Mission, Vision & Values</h2>
       <p class="section-intro">
-        Everything we do is guided by a clear mission, a hopeful vision, and values rooted in our faith, culture,
-        and shared humanity.
+        GSBC is guided by a clear mission and a hopeful vision that is rooted in our culture, faith, and shared struggle
+        for justice and dignity.
       </p>
 
       <div class="grid-2">
         <div class="card">
           <h3>Our Mission</h3>
           <p>
-            To unite Somali Bantu communities across the world, advocate for their rights, and create sustainable
-            pathways for education, economic stability, and social inclusion.
+            To unite Somali Bantu communities globally, advocate for their rights, and build sustainable pathways to
+            education, economic opportunity, and meaningful participation in every society where we live.
           </p>
         </div>
         <div class="card">
           <h3>Our Vision</h3>
           <p>
-            A world where Somali Bantu people live in safety, dignity, and prosperity—fully recognized as equal
-            citizens in every country they call home, while proudly preserving their culture and identity.
+            A world where Somali Bantu people live in safety and prosperity, proudly visible, fully recognized as equal
+            citizens or residents, while preserving their culture, language, and identity.
           </p>
         </div>
       </div>
 
-      <div class="card" style="margin-top: 1.8rem;">
+      <div class="card" style="margin-top:1.8rem;">
         <h3>Core Values</h3>
-        <ul class="list" style="margin-top: 0.5rem;">
-          <li><strong>Unity:</strong> We believe in standing together across borders and generations.</li>
-          <li><strong>Justice:</strong> We speak clearly against discrimination, exploitation, and abuse.</li>
-          <li><strong>Service:</strong> Leadership means serving our communities with humility.</li>
-          <li><strong>Accountability:</strong> We strive for transparent, responsible governance.</li>
-          <li><strong>Culture & Faith:</strong> We honor our traditions while embracing positive change.</li>
+        <ul class="list" style="margin-top:0.4rem;">
+          <li><strong>Unity:</strong> We stand together across borders, clans, and generations.</li>
+          <li><strong>Justice:</strong> We speak clearly against racism, discrimination, and exploitation.</li>
+          <li><strong>Service:</strong> Leadership to us means humility and service to the people.</li>
+          <li><strong>Accountability:</strong> We strive for transparent, responsible governance and finances.</li>
+          <li><strong>Culture & Faith:</strong> We honor our traditions and our Islamic values while embracing positive change.</li>
         </ul>
       </div>
     </div>
@@ -618,77 +658,79 @@
       <div class="section-kicker">Our work</div>
       <h2 class="section-title">Programs & Departments</h2>
       <p class="section-intro">
-        GSBC organizes its work through focused departments and programs that respond to real needs identified by
-        Somali Bantu communities around the world.
+        GSBC organizes its work through key departments that respond to real needs identified by communities in Somalia,
+        refugee camps, and the diaspora.
       </p>
 
-      <div class="grid-2" style="margin-bottom: 1.8rem;">
+      <div class="grid-2" style="margin-bottom:1.8rem;">
         <div class="card">
           <div class="program-badge">Education & Youth</div>
           <h3>Education & Youth Leadership</h3>
           <p>
-            We support students, youth leaders, and parents through tutoring initiatives, scholarship connections,
-            and leadership training.
+            Supporting students and young leaders through mentorship, community schools, and connections to
+            scholarships and vocational training.
           </p>
-          <ul class="list" style="margin-top: 0.4rem;">
-            <li>Youth leadership workshops and mentoring.</li>
-            <li>Support for school enrollment and language access.</li>
-            <li>Partnerships with universities and training centers.</li>
+          <ul class="list" style="margin-top:0.4rem;">
+            <li>Youth leadership trainings and conferences.</li>
+            <li>Support for school enrollment, translation and interpretation.</li>
+            <li>Partnerships with schools, colleges, and training centers.</li>
           </ul>
         </div>
         <div class="card">
-          <div class="program-badge">Advocacy & Rights</div>
-          <h3>Human Rights & Legal Advocacy</h3>
+          <div class="program-badge">Rights & Policy</div>
+          <h3>Human Rights & Advocacy</h3>
           <p>
-            We amplify community voices in local, national, and international spaces to address discrimination,
-            statelessness, and protection concerns.
+            Documenting and raising concerns around discrimination, statelessness, and protection; engaging with
+            local and international institutions.
           </p>
-          <ul class="list" style="margin-top: 0.4rem;">
-            <li>Documentation of human rights concerns.</li>
-            <li>Engagement with policymakers and institutions.</li>
-            <li>Support for legal referrals through trusted partners.</li>
+          <ul class="list" style="margin-top:0.4rem;">
+            <li>Community consultations and listening sessions.</li>
+            <li>Statements, letters, and policy engagement.</li>
+            <li>Referrals to trusted legal and human rights partners.</li>
           </ul>
         </div>
       </div>
 
-      <div class="grid-2" style="margin-bottom: 1.8rem;">
+      <div class="grid-2" style="margin-bottom:1.8rem;">
         <div class="card">
           <div class="program-badge">Livelihoods</div>
           <h3>Economic Empowerment & Development</h3>
           <p>
-            Our development efforts focus on employment, small business support, and community-led projects that
-            create long-term stability.
+            Supporting families through small business initiatives, savings groups, and employment connections to build
+            long-term stability.
           </p>
-          <ul class="list" style="margin-top: 0.4rem;">
-            <li>Skills training and entrepreneurship support.</li>
-            <li>Support for cooperatives and savings groups.</li>
-            <li>Connections to job opportunities and partners.</li>
+          <ul class="list" style="margin-top:0.4rem;">
+            <li>Entrepreneurship and skills-training workshops.</li>
+            <li>Support for cooperatives and community projects.</li>
+            <li>Partnerships with NGOs and employers.</li>
           </ul>
         </div>
         <div class="card">
-          <div class="program-badge">Culture</div>
+          <div class="program-badge">Culture & Identity</div>
           <h3>Cultural Preservation & Community Life</h3>
           <p>
-            We celebrate Somali Bantu culture through language, music, oral history, and intergenerational learning.
+            Celebrating Somali Bantu culture through language, music, oral history, and storytelling that connects
+            elders and youth.
           </p>
-          <ul class="list" style="margin-top: 0.4rem;">
-            <li>Cultural festivals and community gatherings.</li>
-            <li>Documentation of history, language, and traditions.</li>
-            <li>Support for elders and youth to learn from one another.</li>
+          <ul class="list" style="margin-top:0.4rem;">
+            <li>Cultural festivals and heritage days.</li>
+            <li>Documentation of Maay and other languages, songs, and stories.</li>
+            <li>Programs that connect elders with youth and children.</li>
           </ul>
         </div>
       </div>
 
       <div class="card">
         <h3>Key Departments</h3>
-        <ul class="list" style="margin-top: 0.4rem;">
-          <li>Office of the President & Executive Council</li>
-          <li>Advisory Council of Elders</li>
-          <li>Youth & Women’s Affairs Department</li>
-          <li>Education & Research Department</li>
-          <li>Legal & Human Rights Desk</li>
-          <li>Finance & Development Department</li>
-          <li>Communications & Media Department</li>
+        <ul class="list" style="margin-top:0.4rem;">
+          <li>Office of the President & Vice-President</li>
+          <li>Secretariat / Secretary General Office</li>
+          <li>Spokesperson & Public Relations Department</li>
+          <li>Women’s Affairs & Gender Justice</li>
+          <li>Youth & Sports Department</li>
+          <li>Humanitarian Affairs & Disaster Response</li>
+          <li>Finance, Fundraising & Development</li>
+          <li>Policy, Research & Documentation</li>
         </ul>
       </div>
     </div>
@@ -700,105 +742,184 @@
       <div class="section-kicker">Leadership</div>
       <h2 class="section-title">Council & Executive Leadership</h2>
       <p class="section-intro">
-        The Council is made up of trusted community leaders from different countries and regions. This is a sample
-        leadership structure that you can customize with real names and titles.
+        The Global Somali Bantu Council is led by a President, Vice-President, Secretariat and specialized directors
+        working across multiple U.S. states and communities. The structure below reflects the founding leadership team.
       </p>
 
-      <div class="cards-3">
-        <div class="card">
-          <div class="leader-role">President</div>
-          <div class="leader-name">[Your Name Here]</div>
-          <div class="leader-meta">Global Somali Bantu Council</div>
-          <p>
-            Provides overall vision, represents GSBC in official platforms, and ensures that the Council remains
-            accountable to Somali Bantu communities worldwide.
-          </p>
-        </div>
-        <div class="card">
-          <div class="leader-role">Vice President</div>
-          <div class="leader-name">[Name]</div>
-          <div class="leader-meta">Programs & Partnerships</div>
-          <p>
-            Oversees global programs, manages relationships with partner organizations, and supports coordination
-            between regional councils.
-          </p>
-        </div>
-        <div class="card">
-          <div class="leader-role">Secretary General</div>
-          <div class="leader-name">[Name]</div>
-          <div class="leader-meta">Administration & Governance</div>
-          <p>
-            Responsible for documentation, internal communication, meeting records, and implementation of Council
-            resolutions.
-          </p>
+      <div class="card" style="margin-bottom:1.5rem;">
+        <p class="section-intro-sm" style="margin-bottom:0.6rem;">
+          <strong>Top Leadership:</strong> President <strong>Abdihakin Abdirahman</strong> and Vice-President
+          <strong>Jama Mohamed</strong> provide overall guidance and represent GSBC in national and international forums.
+        </p>
+        <div class="leader-list">
+          <div class="leader-item">
+            <div class="leader-role">Spokesperson</div>
+            <div class="leader-name">Abdi Ali</div>
+            <div class="leader-loc">WA</div>
+          </div>
+          <div class="leader-item">
+            <div class="leader-role">Assistant Spokesperson</div>
+            <div class="leader-name">Abdinasser Omar</div>
+            <div class="leader-loc">WI</div>
+          </div>
+          <div class="leader-item">
+            <div class="leader-role">Secretary General</div>
+            <div class="leader-name">Muna Muday</div>
+            <div class="leader-loc">TN</div>
+          </div>
+          <div class="leader-item">
+            <div class="leader-role">Assistant Secretary General</div>
+            <div class="leader-name">Osman Hassan</div>
+            <div class="leader-loc">UT</div>
+          </div>
+          <div class="leader-item">
+            <div class="leader-role">Treasurer</div>
+            <div class="leader-name">Batula Mohamed</div>
+            <div class="leader-loc">OR</div>
+          </div>
+          <div class="leader-item">
+            <div class="leader-role">Assistant Treasurer</div>
+            <div class="leader-name">Adan Mohamed</div>
+            <div class="leader-loc">MA</div>
+          </div>
+          <div class="leader-item">
+            <div class="leader-role">Director of Fundraising</div>
+            <div class="leader-name">Jibril Abdi</div>
+            <div class="leader-loc">NE</div>
+          </div>
+          <div class="leader-item">
+            <div class="leader-role">Director of Global Affairs</div>
+            <div class="leader-name">Masit Mohamed</div>
+            <div class="leader-loc">OH</div>
+          </div>
+          <div class="leader-item">
+            <div class="leader-role">Assistant Global Affairs</div>
+            <div class="leader-name">Yakub Absuge</div>
+            <div class="leader-loc">MN</div>
+          </div>
+          <div class="leader-item">
+            <div class="leader-role">Director of Youth</div>
+            <div class="leader-name">Mohamed Siidi</div>
+            <div class="leader-loc">KY</div>
+          </div>
+          <div class="leader-item">
+            <div class="leader-role">Assistant Director of Youth</div>
+            <div class="leader-name">Abdullahi Omar</div>
+            <div class="leader-loc">AZ</div>
+          </div>
+          <div class="leader-item">
+            <div class="leader-role">Director of Public Relations</div>
+            <div class="leader-name">Qasim Sheikh Mohamed</div>
+            <div class="leader-loc">OH</div>
+          </div>
+          <div class="leader-item">
+            <div class="leader-role">Assistant Public Relations</div>
+            <div class="leader-name">Mohamed Kerow</div>
+            <div class="leader-loc">WA</div>
+          </div>
+          <div class="leader-item">
+            <div class="leader-role">Director of Women Affairs</div>
+            <div class="leader-name">Amina Agoni</div>
+            <div class="leader-loc">WI</div>
+          </div>
+          <div class="leader-item">
+            <div class="leader-role">Assistant Women Affairs</div>
+            <div class="leader-name">Mana Salat Hoko</div>
+            <div class="leader-loc">KY</div>
+          </div>
+          <div class="leader-item">
+            <div class="leader-role">Director of Cultural Affairs</div>
+            <div class="leader-name">Omar Masakira</div>
+            <div class="leader-loc">CO</div>
+          </div>
+          <div class="leader-item">
+            <div class="leader-role">Assistant Cultural Affairs</div>
+            <div class="leader-name">Mohamed Omar</div>
+            <div class="leader-loc">AZ</div>
+          </div>
+          <div class="leader-item">
+            <div class="leader-role">Director of Audit</div>
+            <div class="leader-name">Abdullahi Hassan</div>
+            <div class="leader-loc">KY</div>
+          </div>
+          <div class="leader-item">
+            <div class="leader-role">Assistant Auditor</div>
+            <div class="leader-name">Mohamed Ali</div>
+            <div class="leader-loc">MA</div>
+          </div>
+          <div class="leader-item">
+            <div class="leader-role">Director of Policy</div>
+            <div class="leader-name">Said Abiyow</div>
+            <div class="leader-loc">CA</div>
+          </div>
+          <div class="leader-item">
+            <div class="leader-role">Dir. Humanitarian Affairs & Disaster</div>
+            <div class="leader-name">Ali Moalim</div>
+            <div class="leader-loc">MA</div>
+          </div>
+          <div class="leader-item">
+            <div class="leader-role">Assistant Humanitarian Affairs & Disaster</div>
+            <div class="leader-name">Salima Ahmed</div>
+            <div class="leader-loc">ME</div>
+          </div>
         </div>
       </div>
 
-      <div class="cards-3" style="margin-top: 1.2rem;">
-        <div class="card">
-          <div class="leader-role">Treasurer</div>
-          <div class="leader-name">[Name]</div>
-          <div class="leader-meta">Finance & Development</div>
-          <p>
-            Manages financial records, supports fundraising efforts, and ensures transparent reporting.
-          </p>
-        </div>
-        <div class="card">
-          <div class="leader-role">Youth & Women’s Rep.</div>
-          <div class="leader-name">[Name]</div>
-          <div class="leader-meta">Community Engagement</div>
-          <p>
-            Ensures that youth and women are represented in all major decisions and programs.
-          </p>
-        </div>
-        <div class="card">
-          <div class="leader-role">Advisory Council of Elders</div>
-          <div class="leader-name">Regional Elders</div>
-          <div class="leader-meta">Traditional & Cultural Guidance</div>
-          <p>
-            Provides wisdom, mediation, and cultural guidance rooted in Somali Bantu tradition.
-          </p>
-        </div>
+      <div class="card" style="text-align:center;">
+        <p style="font-weight:600; margin-bottom:0.6rem;">
+          Visual Organizational Structure
+        </p>
+        <p class="section-intro-sm" style="margin-bottom:0.9rem;">
+          The official organizational chart of the Global Somali Bantu Council is shown below. This visual structure can be
+          updated as new departments and regional representatives are added.
+        </p>
+        <!-- Use the org chart image you uploaded to the repo with this filename -->
+        <img src="org-structure.jpg"
+             alt="Global Somali Bantu Council organizational structure"
+             style="border-radius: 1rem; box-shadow: 0 18px 32px rgba(15,23,42,0.35);" />
       </div>
     </div>
   </section>
 
-  <!-- News & Updates -->
-  <section id="news">
+  <!-- Regions & Chapters -->
+  <section id="regions">
     <div class="container">
-      <div class="section-kicker">Updates</div>
-      <h2 class="section-title">News & Announcements</h2>
+      <div class="section-kicker">Regions</div>
+      <h2 class="section-title">Global Presence & Chapters</h2>
       <p class="section-intro">
-        Use this section to share upcoming events, council meetings, statements, and community news. You can update
-        the text below anytime.
+        GSBC works through local councils, community-based organizations, and mosque committees. Below are sample regions
+        and countries where Somali Bantu communities are organizing under the GSBC umbrella.
       </p>
 
-      <div class="card news-item">
-        <div class="news-meta">Announcement • [Add Date]</div>
-        <h3>Formation of the Global Somali Bantu Council</h3>
-        <p>
-          We are pleased to announce the official launch of the Global Somali Bantu Council, bringing together
-          leaders from Africa, North America, Europe, and beyond to work under one umbrella for our people.
-        </p>
+      <div class="regions-grid">
+        <div class="card">
+          <h3>Africa</h3>
+          <ul class="list">
+            <li>Southern & Central Somalia riverine communities</li>
+            <li>Refugee camps in Kenya and neighboring countries</li>
+            <li>Emerging community structures inside Somalia</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>North America</h3>
+          <ul class="list">
+            <li>United States: WA, MN, WI, KY, AZ, MA, OH, CO, NE, OR, CA, ME and more</li>
+            <li>Canada: Growing community networks and youth groups</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Europe & Beyond</h3>
+          <ul class="list">
+            <li>Emerging councils in European cities</li>
+            <li>Partners and allies working with Somali Bantu refugees</li>
+          </ul>
+        </div>
       </div>
 
-      <div class="card news-item">
-        <div class="news-meta">Meeting • [Add Date]</div>
-        <h3>Inaugural Global Council Meeting</h3>
-        <p>
-          Our first virtual global council meeting will set priorities, adopt internal bylaws, and confirm key
-          committees. Community representatives and partner organizations will be invited to observe.
-        </p>
-      </div>
-
-      <div class="card news-item">
-        <div class="news-meta tag">Coming soon</div>
-        <h3>Country & Regional Chapters</h3>
-        <p>
-          GSBC will recognize national and regional Somali Bantu councils and community-based organizations as
-          official members of the global umbrella structure.
-        </p>
-      </div>
+      <p class="section-intro-sm" style="margin-top:1.2rem;">
+        If you represent a Somali Bantu organization, youth group, or council and would like to become an official chapter
+        under GSBC, please contact the Secretariat using the form below.
+      </p>
     </div>
   </section>
 
@@ -808,27 +929,27 @@
       <div class="section-kicker">Take part</div>
       <h2 class="section-title">Get Involved</h2>
       <p class="section-intro">
-        Somali Bantu progress is a shared responsibility. Whether you are a community member, ally, or partner
-        organization, there is a place for you in this work.
+        Somali Bantu progress is a shared responsibility. Whether you are a community member, ally, religious leader, or
+        partner organization, there is a place for you in this work.
       </p>
 
       <div class="cta-panel">
         <div>
           <h3>Become a member, volunteer, or partner</h3>
           <p>
-            If you represent a community organization, council, mosque, youth group, or simply want to help,
-            you can connect with GSBC to join the network.
+            If you represent a community organization, council, mosque, youth or women’s group, you are invited to
+            connect with GSBC and join the global network.
           </p>
-          <div style="margin-top: 1rem;">
-            <a href="#contact" class="btn btn-primary">Contact us to join</a>
+          <div style="margin-top:1rem;">
+            <a href="#contact" class="btn btn-primary">Contact the Secretariat</a>
           </div>
         </div>
         <div>
           <ul>
-            <li>• Register your local Somali Bantu council or community group.</li>
-            <li>• Volunteer your skills (translation, legal, education, media, etc.).</li>
-            <li>• Partner with GSBC on projects in camps or resettled communities.</li>
-            <li>• Support our work through in-kind contributions or funding.</li>
+            <li>• Register your local Somali Bantu council or CBO as a chapter.</li>
+            <li>• Volunteer skills in translation, legal support, education, media, or organizing.</li>
+            <li>• Partner with GSBC on humanitarian or development projects.</li>
+            <li>• Support programs through in-kind contributions or funding.</li>
           </ul>
         </div>
       </div>
@@ -841,45 +962,45 @@
       <div class="section-kicker">Contact</div>
       <h2 class="section-title">Contact & Secretariat</h2>
       <p class="section-intro">
-        Use the form below (or the contact details) to reach the GSBC Secretariat. You can update the email,
-        phone number, and address with your real information.
+        Use the form below (or the contact details) to reach the GSBC Secretariat. These details can be updated with the
+        official office address and communication channels.
       </p>
 
       <div class="contact-grid">
         <form>
-          <div style="margin-bottom: 0.7rem;">
+          <div style="margin-bottom:0.7rem;">
             <label for="name">Full name</label>
             <input id="name" type="text" placeholder="Your name" />
           </div>
-          <div style="margin-bottom: 0.7rem;">
+          <div style="margin-bottom:0.7rem;">
             <label for="email">Email</label>
             <input id="email" type="email" placeholder="you@example.com" />
           </div>
-          <div style="margin-bottom: 0.7rem;">
+          <div style="margin-bottom:0.7rem;">
             <label for="subject">Subject</label>
             <input id="subject" type="text" placeholder="Membership, partnership, media, etc." />
           </div>
-          <div style="margin-bottom: 0.9rem;">
+          <div style="margin-bottom:0.9rem;">
             <label for="message">Message</label>
             <textarea id="message" placeholder="Write your message here..."></textarea>
           </div>
-          <button type="submit" class="btn btn-primary">Send (static demo)</button>
-          <p style="font-size: 0.8rem; color: #6b7280; margin-top: 0.3rem;">
-            This is a static form. You can later connect it to an email or form service.
+          <button type="submit" class="btn btn-primary">Send (demo form)</button>
+          <p style="font-size:0.8rem; color:#6b7280; margin-top:0.3rem;">
+            This is a static demo form. Later, you can connect it to an email or form service.
           </p>
         </form>
 
         <div class="contact-meta">
           <p><strong>Secretariat (Example)</strong></p>
           <p>Global Somali Bantu Council (GSBC)</p>
-          <p>[City], [State/Region], [Country]</p>
-          <p style="margin-top: 0.5rem;">
+          <p>[City], [State], [Country]</p>
+          <p style="margin-top:0.5rem;">
             <strong>Email:</strong> info@globalsomalibantucouncil.com
           </p>
           <p><strong>Phone / WhatsApp:</strong> [+000 000 0000]</p>
-          <p style="margin-top: 0.5rem;">
-            For official letters, partnership proposals, and media inquiries, please include your full contact
-            details and organization name.
+          <p style="margin-top:0.5rem;">
+            For official letters, partnership proposals, and media inquiries, please include your full name, organization,
+            and contact details.
           </p>
         </div>
       </div>
@@ -890,7 +1011,7 @@
   <footer>
     <div class="container">
       <div class="footer-inner">
-        <div>© <span id="year"></span> Global Somali Bantu Council. All rights reserved.</div>
+        <div>© <span id="year"></span> Global Somali Bantu Council (GSBC). All rights reserved.</div>
         <div class="footer-links">
           <span>globalsomalibantucouncil.com</span>
         </div>
