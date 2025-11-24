@@ -1,622 +1,84 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>GSBC – Global Somali Bantu Council</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Global Somali Bantu Council (GSBC) – the official umbrella body for Somali Bantu communities worldwide." />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --primary: #2454c6;
-      --primary-alt: #1aa5d8;
-      --accent: #f4a623;
-      --bg-page: #f3f4f6;
-      --card-bg: #ffffff;
-      --text-main: #0f172a;
-      --text-muted: #4b5563;
-      --max-width: 1120px;
-      --radius-lg: 16px;
-      --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.12);
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--text-main);
-      background: var(--bg-page);
-      line-height: 1.6;
-    }
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
-
-    .container {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0 1.25rem;
-    }
-
-    /* Header */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      background: #ffffff;
-      border-bottom: 1px solid #e5e7eb;
-    }
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0.7rem 0;
-    }
-    .nav-left {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
-    .logo-circle {
-      width: 38px;
-      height: 38px;
-      border-radius: 999px;
-      background: #0f172a;
-      color: #ffffff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.9rem;
-      font-weight: 700;
-    }
-    .nav-title span:first-child {
-      font-size: 0.9rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-    .nav-title span:last-child {
-      font-size: 0.75rem;
-      color: #6b7280;
-    }
-    .nav-title {
-      display: flex;
-      flex-direction: column;
-    }
-    .nav-links {
-      display: flex;
-      gap: 1rem;
-      font-size: 0.9rem;
-      align-items: center;
-    }
-    .nav-links a {
-      padding: 0.3rem 0.5rem;
-      border-radius: 999px;
-      color: #374151;
-      font-weight: 500;
-    }
-    .nav-links a:hover { background:#e5f0ff; }
-    .nav-cta {
-      background: var(--primary);
-      color:#fff !important;
-      padding:0.4rem 0.9rem;
-      border-radius:999px;
-      font-weight:600;
-    }
-    .nav-toggle {
-      display:none;
-      font-size:1.5rem;
-      cursor:pointer;
-    }
-
-    /* HERO */
-    .hero-wrapper {
-      background: radial-gradient(circle at top left,#a5b4fc 0,#f9a8d4 35%,#fef3c7 65%,#e0f2fe 100%);
-      padding:2.4rem 0 2.7rem 0;
-    }
-    .hero-inner {
-      display:grid;
-      grid-template-columns:minmax(0,1.3fr) minmax(0,1.1fr);
-      gap:2.3rem;
-      align-items:center;
-    }
-    .hero-eyebrow {
-      display:inline-flex;
-      align-items:center;
-      gap:0.5rem;
-      padding:0.2rem 0.75rem;
-      border-radius:999px;
-      background:rgba(255,255,255,0.85);
-      border:1px solid rgba(148,163,184,0.4);
-      font-size:0.78rem;
-      color:#374151;
-      margin-bottom:0.8rem;
-    }
-    .hero-eyebrow strong{color:#111827;}
-    .flags img{
-      height:16px;
-      border-radius:3px;
-      border:1px solid #d1d5db;
-    }
-    .hero-title{
-      font-size:clamp(2rem,3vw,2.6rem);
-      margin:0 0 0.4rem 0;
-      color:#0f172a;
-    }
-    .hero-subtitle{
-      font-weight:500;
-      margin-bottom:0.75rem;
-      color:#111827;
-    }
-    .hero-text{font-size:0.95rem;color:#374151;margin-bottom:0.9rem;}
-    .hero-text-translation{
-      font-size:0.86rem;
-      font-style:italic;
-      background:rgba(255,255,255,0.92);
-      border-radius:10px;
-      padding:0.6rem 0.8rem;
-      border-left:3px solid var(--accent);
-      margin-bottom:1.1rem;
-    }
-    .hero-text-translation strong{
-      font-style:normal;
-      color:#92400e;
-    }
-    .hero-actions{
-      display:flex;
-      flex-wrap:wrap;
-      gap:0.75rem;
-      margin-bottom:1.1rem;
-    }
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:0.3rem;
-      padding:0.6rem 1.05rem;
-      border-radius:999px;
-      border:1px solid transparent;
-      font-size:0.9rem;
-      font-weight:600;
-      cursor:pointer;
-    }
-    .btn-primary{
-      background:linear-gradient(to right,#2454c6,#1aa5d8);
-      color:#fff;
-    }
-    .btn-primary:hover{background:linear-gradient(to right,#1d4ed8,#0ea5e9);}
-    .btn-outline{
-      background:rgba(255,255,255,0.95);
-      color:#111827;
-      border-color:#d1d5db;
-    }
-    .btn-outline:hover{border-color:#2454c6;}
-    .hero-stats{
-      display:flex;
-      flex-wrap:wrap;
-      gap:1.1rem;
-      font-size:0.85rem;
-      color:#374151;
-    }
-    .stat-number{font-size:1.1rem;font-weight:700;}
-    .stat-label{
-      font-size:0.8rem;
-      text-transform:uppercase;
-      letter-spacing:0.04em;
-    }
-
-    .hero-card{
-      background:#ffffff;
-      border-radius:var(--radius-lg);
-      padding:1rem 1rem 0.9rem 1rem;
-      box-shadow:var(--shadow-soft);
-      border:1px solid rgba(148,163,184,0.5);
-    }
-    .hero-card-header{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      margin-bottom:0.7rem;
-      font-size:0.8rem;
-    }
-    .hero-card-header span:first-child{
-      text-transform:uppercase;
-      letter-spacing:0.09em;
-      font-weight:600;
-      color:#111827;
-    }
-    .hero-pill{
-      font-size:0.7rem;
-      padding:0.15rem 0.55rem;
-      border-radius:999px;
-      background:#e0f2fe;
-      color:#1e3a8a;
-    }
-
-    .hero-dashboard{
-      display:grid;
-      grid-template-columns:repeat(2,minmax(0,1fr));
-      gap:0.55rem;
-      margin-bottom:0.75rem;
-    }
-    .dash-card{
-      background:#eff6ff;
-      border-radius:10px;
-      padding:0.5rem 0.55rem;
-      font-size:0.78rem;
-    }
-    .dash-card.dark{
-      background:#0f172a;
-      color:#e5e7eb;
-    }
-    .dash-card h4{
-      margin:0 0 0.25rem 0;
-      font-size:0.8rem;
-    }
-    .hero-card-footer{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      font-size:0.8rem;
-      color:#6b7280;
-      border-top:1px solid #e5e7eb;
-      padding-top:0.5rem;
-      margin-top:0.3rem;
-    }
-
-    /* Sections */
-    section{padding:2.3rem 0;}
-    .section-header{
-      max-width:720px;
-      margin-bottom:1.4rem;
-    }
-    .section-kicker{
-      font-size:0.78rem;
-      text-transform:uppercase;
-      letter-spacing:0.08em;
-      color:#2454c6;
-      font-weight:600;
-    }
-    .section-title{
-      margin:0 0 0.35rem 0;
-      font-size:1.35rem;
-      color:#0f172a;
-    }
-    .section-subtitle{
-      margin:0;
-      font-size:0.95rem;
-      color:#4b5563;
-    }
-
-    .block{
-      background:var(--card-bg);
-      border-radius:14px;
-      padding:1.3rem 1.3rem;
-      box-shadow:var(--shadow-soft);
-      border:1px solid #e5e7eb;
-    }
-    .two-column{
-      display:grid;
-      grid-template-columns:minmax(0,1.5fr) minmax(0,1.1fr);
-      gap:1.5rem;
-      align-items:flex-start;
-    }
-    .card{
-      background:#ffffff;
-      border-radius:12px;
-      padding:1rem 1.1rem;
-      border:1px solid #e5e7eb;
-    }
-    .card-title{
-      margin:0 0 0.45rem 0;
-      font-size:1.02rem;
-      color:#0f172a;
-    }
-    .card p{
-      margin:0 0 0.5rem 0;
-      font-size:0.9rem;
-      color:#4b5563;
-    }
-    .bullet-list{
-      margin:0.3rem 0 0 0;
-      padding-left:1.1rem;
-      font-size:0.9rem;
-      color:#4b5563;
-    }
-    .bullet-list li{margin-bottom:0.25rem;}
-
-    .values-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
-      gap:0.8rem;
-      margin-top:0.9rem;
-    }
-    .value-item{
-      border-radius:10px;
-      padding:0.7rem 0.8rem;
-      background:#f9fafb;
-      border:1px solid #e5e7eb;
-      font-size:0.86rem;
-      color:#4b5563;
-    }
-    .value-item strong{
-      display:block;
-      margin-bottom:0.2rem;
-      color:#111827;
-    }
-
-    .programs-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-      gap:1rem;
-    }
-    .program-card h4{
-      font-size:0.82rem;
-      text-transform:uppercase;
-      letter-spacing:0.08em;
-      color:#6b7280;
-      margin:0 0 0.4rem 0;
-    }
-    .program-card h3{
-      margin:0 0 0.3rem 0;
-      font-size:1rem;
-      color:#0f172a;
-    }
-    .program-card ul{
-      margin:0.3rem 0 0 0;
-      padding-left:1.1rem;
-      font-size:0.87rem;
-      color:#4b5563;
-    }
-
-    .leadership-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
-      gap:1rem;
-      font-size:0.88rem;
-    }
-    .leader-card{
-      border-radius:10px;
-      padding:0.7rem 0.9rem;
-      background:#f9fafb;
-      border:1px solid #e5e7eb;
-    }
-    .leader-role{font-weight:600;color:#0f172a;margin-bottom:0.15rem;}
-    .leader-name{font-weight:500;}
-    .leader-location{font-size:0.8rem;color:#6b7280;}
-
-    .regions-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-      gap:1rem;
-      font-size:0.9rem;
-    }
-
-    .involved-layout,
-    .contact-layout{
-      display:grid;
-      grid-template-columns:minmax(0,1.5fr) minmax(0,1.1fr);
-      gap:1.3rem;
-      align-items:flex-start;
-    }
-    .check-list{
-      list-style:none;
-      margin:0.4rem 0 0 0;
-      padding:0;
-      font-size:0.9rem;
-      color:#4b5563;
-    }
-    .check-list li{
-      display:flex;
-      gap:0.4rem;
-      align-items:flex-start;
-      margin-bottom:0.3rem;
-    }
-    .check-icon{
-      width:18px;
-      height:18px;
-      border-radius:999px;
-      border:2px solid #16a34a;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:0.85rem;
-      color:#15803d;
-      background:#ecfdf3;
-      flex-shrink:0;
-      margin-top:0.05rem;
-    }
-
-    .form-grid{
-      display:grid;
-      gap:0.7rem;
-    }
-    label{
-      font-size:0.82rem;
-      font-weight:500;
-      margin-bottom:0.1rem;
-    }
-    input[type="text"],
-    input[type="email"],
-    textarea{
-      width:100%;
-      border-radius:8px;
-      border:1px solid #e5e7eb;
-      padding:0.55rem 0.7rem;
-      font-size:0.88rem;
-      font-family:inherit;
-      resize:vertical;
-    }
-    textarea{min-height:110px;}
-    input:focus,textarea:focus{
-      outline:none;
-      border-color:#2454c6;
-      box-shadow:0 0 0 1px rgba(37,99,235,0.12);
-    }
-    .form-note{
-      font-size:0.8rem;
-      color:#6b7280;
-      margin-top:0.4rem;
-    }
-
-    footer{
-      padding:1rem 0 1.2rem 0;
-      font-size:0.82rem;
-      color:#6b7280;
-      background:#ffffff;
-      border-top:1px solid #e5e7eb;
-      margin-top:1.5rem;
-    }
-    .footer-inner{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:0.6rem;
-      flex-wrap:wrap;
-    }
-    .footer-domain{font-weight:500;color:#0f172a;}
-
-    @media(max-width:880px){
-      .hero-inner,
-      .two-column,
-      .involved-layout,
-      .contact-layout{grid-template-columns:1fr;}
-      .hero-card{order:-1;}
-      .nav-toggle{display:block;color:#111827;}
-      .nav-links{
-        display:none;
-        position:absolute;
-        right:0;
-        left:0;
-        top:52px;
-        background:#ffffff;
-        border-top:1px solid #e5e7eb;
-        padding:0.5rem 1.25rem 0.7rem;
-        flex-wrap:wrap;
-      }
-      .nav-links.show{display:flex;}
-    }
-  </style>
-</head>
-<body>
-<header>
+<!-- Replace your existing hero & the section directly under it with this block -->
+<section id="top" style="background:#0f2544;color:#ffffff;padding:2.8rem 0 2rem 0;">
   <div class="container">
-    <div class="nav">
-      <div class="nav-left">
-        <div class="logo-circle">GS</div>
-        <div class="nav-title">
-          <span>GSBC</span>
-          <span>Global Somali Bantu Council</span>
+    <div style="display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1.0fr);gap:2.2rem;align-items:center;">
+      <div>
+        <div style="font-size:0.8rem;text-transform:uppercase;letter-spacing:0.09em;color:#bfdbfe;font-weight:600;margin-bottom:0.4rem;">
+          Global Somali Bantu Council
+        </div>
+        <h1 style="font-size:clamp(2rem,3vw,2.6rem);margin:0 0 0.5rem 0;">
+          A united Somali Bantu voice across borders.
+        </h1>
+        <p style="margin:0 0 0.75rem 0;font-size:1rem;color:#e5e7eb;">
+          GSBC serves as the official umbrella body for Somali Bantu communities in Somalia, refugee camps, and the diaspora.
+        </p>
+        <p style="margin:0 0 0.9rem 0;font-size:0.92rem;color:#d1d5db;">
+          From riverine villages to resettlement cities, we work to defend rights, protect identity, and build opportunity
+          for the next generation.
+        </p>
+        <p style="margin:0 0 1rem 0;font-size:0.86rem;font-style:italic;color:#e5e7eb;">
+          <strong style="font-style:normal;color:#facc15;">Af Maay / Af Soomaali:</strong>
+          Golaha Caalamiga ah ee reer Bantu Soomaalida waa hay’adda mideysa hoggaanka, culimada, dhalinyarada iyo haweenka.
+        </p>
+
+        <div style="display:flex;flex-wrap:wrap;gap:0.7rem;margin-bottom:1.1rem;">
+          <a href="#get-involved" style="background:#facc15;color:#0f172a;padding:0.6rem 1.1rem;border-radius:999px;font-weight:600;font-size:0.9rem;">
+            Join / Register a Council
+          </a>
+          <a href="#leadership" style="border-radius:999px;border:1px solid rgba(191,219,254,0.9);padding:0.55rem 1rem;font-size:0.9rem;color:#e5e7eb;">
+            View Leadership Structure
+          </a>
+        </div>
+
+        <div style="display:flex;flex-wrap:wrap;gap:1.1rem;font-size:0.85rem;color:#e5e7eb;">
+          <div>
+            <div style="font-weight:700;font-size:1.1rem;">20+</div>
+            <div style="text-transform:uppercase;letter-spacing:0.05em;font-size:0.78rem;">Countries</div>
+          </div>
+          <div>
+            <div style="font-weight:700;font-size:1.1rem;">100K+</div>
+            <div style="text-transform:uppercase;letter-spacing:0.05em;font-size:0.78rem;">Community members</div>
+          </div>
+          <div>
+            <div style="font-weight:700;font-size:1.1rem;">3</div>
+            <div style="text-transform:uppercase;letter-spacing:0.05em;font-size:0.78rem;">Core pillars</div>
+          </div>
         </div>
       </div>
-      <nav>
-        <div class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')">☰</div>
-        <div class="nav-links">
-          <a href="#about">About</a>
-          <a href="#mission">Mission</a>
-          <a href="#programs">Programs</a>
-          <a href="#leadership">Leadership</a>
-          <a href="#regions">Regions</a>
-          <a href="#get-involved">Get Involved</a>
-          <a href="#contact" class="nav-cta">Contact</a>
+
+      <aside style="background:#102a43;border-radius:14px;padding:1rem 1.1rem;border:1px solid rgba(148,163,184,0.6);box-shadow:0 18px 40px rgba(15,23,42,0.55);">
+        <img src="gsbc-header.jpg" alt="GSBC header" style="border-radius:10px;margin-bottom:0.75rem;">
+        <div style="font-size:0.8rem;color:#e5e7eb;margin-bottom:0.6rem;">
+          <strong>Organizational Structure:</strong> President, Vice-President, Secretariat, and departmental directors
+          coordinate advocacy, development, and culture programs.
         </div>
-      </nav>
+        <div style="font-size:0.8rem;color:#cbd5f5;">
+          Neutral, community-driven, and non-partisan – representing Somali Bantu communities wherever they live.
+        </div>
+      </aside>
     </div>
   </div>
-</header>
+</section>
 
-<main>
-  <!-- HERO -->
-  <section class="hero-wrapper" id="top">
-    <div class="container">
-      <div class="hero-inner">
-        <div>
-          <div class="hero-eyebrow">
-            <strong>Unity • Justice • Dignity</strong>
-            <span class="flags"><img src="gsbc-flags.webp" alt="Flags of the United States and Somalia"></span>
-          </div>
-
-          <h1 class="hero-title">Global Somali Bantu Council (GSBC)</h1>
-          <p class="hero-subtitle">Much more than an umbrella council – a global home for Somali Bantu leadership.</p>
-          <p class="hero-text">
-            GSBC connects Somali Bantu councils, elders, youth, and partners across continents to defend rights,
-            protect identity, and build a better future for our people in Somalia, in refugee camps, and in the diaspora.
-          </p>
-          <p class="hero-text-translation">
-            <strong>Af Maay / Af Soomaali:</strong> Golaha Caalamiga ah ee reer Bantu Soomaalida waa hay’adda mideysa
-            hoggaanka, culimada, dhalinyarada iyo haweenka, si loo ilaaliyo karaamada iyo codka bulshada.
-          </p>
-
-          <div class="hero-actions">
-            <a href="#get-involved" class="btn btn-primary">Join / Register a Council</a>
-            <a href="#leadership" class="btn btn-outline">View Leadership Structure</a>
-          </div>
-
-          <div class="hero-stats">
-            <div class="stat">
-              <div class="stat-number">20+</div>
-              <div class="stat-label">Countries represented</div>
-            </div>
-            <div class="stat">
-              <div class="stat-number">100K+</div>
-              <div class="stat-label">Community members reached</div>
-            </div>
-            <div class="stat">
-              <div class="stat-number">3</div>
-              <div class="stat-label">Core pillars: Advocacy • Development • Culture</div>
-            </div>
-          </div>
-        </div>
-
-        <aside class="hero-card">
-          <div class="hero-card-header">
-            <span>Organizational Snapshot</span>
-            <span class="hero-pill">GSBC Structure</span>
-          </div>
-          <div class="hero-dashboard">
-            <div class="dash-card">
-              <h4>Leadership</h4>
-              <p>President, Vice-President, Secretariat and directors working across regions.</p>
-            </div>
-            <div class="dash-card dark">
-              <h4 style="margin:0 0 0.25rem 0;">Advocacy</h4>
-              <p style="margin:0;">Human rights, policy, and community representation.</p>
-            </div>
-            <div class="dash-card">
-              <h4>Programs</h4>
-              <p>Education &amp; youth, livelihoods, culture &amp; identity.</p>
-            </div>
-            <div class="dash-card">
-              <h4>Global Reach</h4>
-              <p>Somalia, refugee camps, and diaspora communities worldwide.</p>
-            </div>
-          </div>
-          <div class="hero-card-footer">
-            <span>Neutral, community-driven, non-partisan.</span>
-            <span>Serving Somali Bantu communities everywhere.</span>
-          </div>
-        </aside>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <!-- (Same content as before, shortened for space – keep exactly from previous design) -->
-  <!-- You can paste the About / Mission / Programs / Leadership / Regions / Get Involved / Contact sections
-       from the last file I gave you. Only HERO + header style changed here. -->
-</main>
-
-<footer>
+<section style="background:#ffffff;padding:0 0 2.2rem 0;">
   <div class="container">
-    <div class="footer-inner">
-      <div>© 2025 Global Somali Bantu Council (GSBC). All rights reserved.</div>
-      <div class="footer-domain">globalsomalibantucouncil.com</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:-1.5rem;">
+      <a href="#programs" style="background:#f97316;color:#111827;border-radius:10px;padding:0.9rem 1rem;text-decoration:none;box-shadow:0 12px 24px rgba(15,23,42,0.08);">
+        <h3 style="margin:0 0 0.35rem 0;font-size:0.98rem;color:#ffffff;">Advocacy &amp; Rights</h3>
+        <p style="margin:0;font-size:0.85rem;color:#fffbeb;">Human rights, protection, and policy engagement.</p>
+      </a>
+      <a href="#programs" style="background:#1d4ed8;color:#ffffff;border-radius:10px;padding:0.9rem 1rem;box-shadow:0 12px 24px rgba(15,23,42,0.08);">
+        <h3 style="margin:0 0 0.35rem 0;font-size:0.98rem;">Development &amp; Livelihoods</h3>
+        <p style="margin:0;font-size:0.85rem;color:#e0f2fe;">Economic empowerment and community projects.</p>
+      </a>
+      <a href="#programs" style="background:#0f766e;color:#ecfdf5;border-radius:10px;padding:0.9rem 1rem;box-shadow:0 12px 24px rgba(15,23,42,0.08);">
+        <h3 style="margin:0 0 0.35rem 0;font-size:0.98rem;">Culture, Youth &amp; Women</h3>
+        <p style="margin:0;font-size:0.85rem;">Preserving language, stories, and leadership roles.</p>
+      </a>
+      <a href="#contact" style="background:#facc15;color:#111827;border-radius:10px;padding:0.9rem 1rem;box-shadow:0 12px 24px rgba(15,23,42,0.08);">
+        <h3 style="margin:0 0 0.35rem 0;font-size:0.98rem;">Contact Secretariat</h3>
+        <p style="margin:0;font-size:0.85rem;">Reach the Columbus, Ohio main office.</p>
+      </a>
     </div>
   </div>
-</footer>
-</body>
-</html>
+</section>
